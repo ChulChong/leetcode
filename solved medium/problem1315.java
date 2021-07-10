@@ -1,3 +1,5 @@
+import leetcode.TreeNode;
+
 class problem1315 {
 
 
@@ -27,4 +29,4 @@ class problem1315 {
     }
 
 }
-}
+
