@@ -2,7 +2,7 @@ class problem1464 {
 
     public static void main(String[] args) {
         int[] dd = {10, 2, 5, 2};
-        maxProduct(dd);
+        System.out.println(maxProduct(dd));
     }
 
     public static int maxProduct(int[] nums) {

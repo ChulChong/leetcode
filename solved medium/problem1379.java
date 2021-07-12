@@ -1,3 +1,5 @@
+import leetcode.TreeNode;
+
 class problem1379 {
     public static void main(String[] args) {
     }
@@ -21,13 +23,4 @@ class problem1379 {
         return right;
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }
