@@ -1,4 +1,3 @@
-import leetcode.TreeNode;
 
 public class Problem1302 {
 

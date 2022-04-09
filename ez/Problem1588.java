@@ -11,14 +11,14 @@ public class Problem1588 {
         int n = arr.length;
 
         for (int i = 0; i < n; i++) {
-            int endingHere = i + 1;
-            int startingHere = n - i;
-            int totalSubarrays = endingHere * startingHere;
-            int oddSubarrays = totalSubarrays / 2;
-            if (totalSubarrays % 2 == 1) {
-                oddSubarrays++;
+            int endingHere = i + 1; //1 , 2
+            int startingHere = n - i; //4 , 3
+            int totalSubarrays = endingHere * startingHere; //4 , 6
+            int oddSubarrays = totalSubarrays / 2; //2 , 3
+            if (totalSubarrays % 2 == 1) { //true false
+                oddSubarrays++; //3
             }
-            result += oddSubarrays * arr[i];
+            result += oddSubarrays * arr[i]; // result += 3 , 12
         }
 
         return result;

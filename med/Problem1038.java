@@ -1,6 +1,4 @@
 
-import leetcode.TreeNode;
-
 public class Problem1038 {
     public static void main(String[] args) {
         TreeNode n3 = new TreeNode(3);
