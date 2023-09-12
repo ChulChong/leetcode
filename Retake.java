@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class Problem20 {
+public class Retake {
 
     public static void main(String[] args) {
         String s = "()";
