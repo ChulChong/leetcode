@@ -8,15 +8,18 @@ public class Problem121 {
 
     public static int maxProfit(int[] prices) {
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < prices.length; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                if (prices[i] - prices[j] < 0 && min > prices[i] - prices[j]) {
-                    min = prices[i] - prices[j];
-                }
+        int profit = 0;
+        int curr = 0;
+
+        for (int price : prices) {
+            if (price < min) {
+                min = price;
+            }
+            curr = price - min;
+            if (profit < curr) {
+                profit = curr;
             }
         }
-        if (min == Integer.MAX_VALUE) return 0;
-
-        return Math.abs(min);
+        return profit;
     }
 }
