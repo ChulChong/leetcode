@@ -1,25 +1,34 @@
+import java.util.Stack;
+
 public class Retake {
     public static void main(String[] args) {
-        int[] prices = {7, 1, 5, 3, 6, 4};
-        System.out.println(maxProfit(prices));
+        String s = "race a car";
+        System.out.println(isPalindrome(s));
 
-        //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+        //https://leetcode.com/problems/valid-palindrome/
     }
 
-    public static int maxProfit(int[] prices) {
-        int min = Integer.MAX_VALUE;
-        int profit = 0;
-        int curr = 0;
-
-        for (int price : prices) {
-            if (price < min) {
-                min = price;
-            }
-            curr = price - min;
-            if (profit < curr) {
-                profit = curr;
+    public static boolean isPalindrome(String s) {
+        if (s.isEmpty()) {
+            return true;
+        }
+        int start = 0;
+        int last = s.length() - 1;
+        while (start <= last) {
+            char currFirst = s.charAt(start);
+            char currLast = s.charAt(last);
+            if (!Character.isLetterOrDigit(currFirst)) {
+                start++;
+            } else if (!Character.isLetterOrDigit(currLast)) {
+                last--;
+            } else {
+                if (Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)) {
+                    return false;
+                }
+                start++;
+                last--;
             }
         }
-        return profit;
+        return true;
     }
 }
