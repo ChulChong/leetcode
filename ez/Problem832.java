@@ -8,27 +8,34 @@ public class Problem832 {
     }
 
     public static int[][] flipAndInvertImage(int[][] image) {
-        int row = image.length;
-        int col = image[0].length;
-        int[][] ans = new int[row][col];
-
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                ans[i][j] = image[i][col - j - 1];
-            }
+        int len = image[0].length;
+        for (int i = 0; i < len; i++) {
+            image[i] = reverse(image[i]);
+            image[i] = invert(image[i]);
         }
 
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if(ans[i][j]==0){
-                    ans[i][j] = 1;
-                }else{
-                    ans[i][j] = 0;
-                }
+        return image;
+    }
 
-            }
+    public static int[] reverse(int[] image) {
+        int len = image.length;
+        for (int i = 0; i < len / 2; i++) {
+            int temp = image[i];
+            image[i] = image[image.length - i - 1];
+            image[image.length - i - 1] = temp;
         }
 
-        return ans;
+        return image;
+    }
+
+    public static int[] invert(int[] image) {
+        for (int i = 0; i < image.length; i++) {
+            if (image[i] == 1) {
+                image[i] = 0;
+            } else {
+                image[i] = 1;
+            }
+        }
+        return image;
     }
 }
