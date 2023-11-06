@@ -1,8 +1,7 @@
-import leetcode.ListNode;
+
 
 import java.util.HashSet;
 
-import static leetcode.ListNode.printNode;
 
 public class Problem141 {
     public static void main(String[] args) {

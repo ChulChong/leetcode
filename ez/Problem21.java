@@ -1,6 +1,3 @@
-import leetcode.ListNode;
-
-import static leetcode.ListNode.printNode;
 
 public class Problem21 {
     public static void main(String[] args) {
@@ -12,7 +9,7 @@ public class Problem21 {
         ListNode node3 = new ListNode(3, node4);
         ListNode head2 = new ListNode(1, node3);
 
-        printNode(mergeTwoLists(head, head2));
+        ListNode.printNode(mergeTwoLists(head, head2));
     }
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {

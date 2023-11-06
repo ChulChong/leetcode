@@ -1,4 +1,3 @@
-import leetcode.ListNode;
 
 public class Problem1290 {
     public static void main(String[] args) {
