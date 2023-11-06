@@ -13,13 +13,13 @@ public class Fibonacci {
 
         int first = 0;
         int second = 1;
-        int temp;
+        int temp = 0;
 
         for (int i = 0; i < 10; i++) {
-            System.out.println(first);
-            temp = second;
-            second += first;
-            first = temp;
+            System.out.println(temp);
+            temp = first + second;
+            first = second;
+            second = temp;
         }
 
     }
