@@ -9,22 +9,19 @@ public class Problem543 {
         //https://leetcode.com/problems/diameter-of-binary-tree/
     }
 
+    public static int i = 0;
+
     public static int diameterOfBinaryTree(TreeNode root) {
-
         if (root == null) return 0;
-        int diameter = 0;
-
-        traversalTree(root, diameter);
-
-        return diameter;
+        traversalTree(root, i);
+        return i;
     }
 
     public static int traversalTree(TreeNode root, int diameter) {
-
-        if (root == null) return -1;
+        if (root == null) return 0;
         int leftPath = traversalTree(root.left, diameter);
         int rightPath = traversalTree(root.right, diameter);
-
+        i = Math.max(i, leftPath + rightPath);
         return 1 + Math.max(leftPath, rightPath);
     }
 }
