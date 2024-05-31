@@ -2,33 +2,27 @@ import java.util.Stack;
 
 public class Retake {
     public static void main(String[] args) {
-        String s = "race a car";
-        System.out.println(isPalindrome(s));
-
-        //https://leetcode.com/problems/valid-palindrome/
+        String str = "Battle of the Vowels: Hawaii vs. Grozny";
+        String remove = "aeiou";
+        System.out.println(removeChars(str, remove));
     }
 
-    public static boolean isPalindrome(String s) {
-        if (s.isEmpty()) {
-            return true;
+    public static String removeChars(String str, String remove) {
+        char[] s = str.toCharArray();
+        char[] r = remove.toCharArray();
+        int src, dst = 0;
+// flags automatically initialized to false, size of 128 assumes ASCII
+        boolean[] flags = new boolean[128];
+// Set flags for characters to be removed
+        for (src = 0; src < r.length; ++src) {
+            flags[r[src]] = true;
         }
-        int start = 0;
-        int last = s.length() - 1;
-        while (start <= last) {
-            char currFirst = s.charAt(start);
-            char currLast = s.charAt(last);
-            if (!Character.isLetterOrDigit(currFirst)) {
-                start++;
-            } else if (!Character.isLetterOrDigit(currLast)) {
-                last--;
-            } else {
-                if (Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)) {
-                    return false;
-                }
-                start++;
-                last--;
+// Now loop through all the characters, // copying only if they aren’t flagged
+        for (src = 0; src < s.length; ++src) {
+            if (!flags[s[src]]) {
+                s[dst++] = s[src];
             }
         }
-        return true;
+        return new String(s, 0, dst);
     }
 }
