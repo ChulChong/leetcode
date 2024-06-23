@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Problem242 {
 
@@ -10,6 +12,27 @@ public class Problem242 {
     }
 
     public static boolean isAnagram(String s, String t) {
+        char[] sc = s.toCharArray();
+        char[] tc = t.toCharArray();
+        Arrays.sort(sc);
+        Arrays.sort(tc);
+        return Arrays.equals(sc, tc);
+    }
+
+ /*   public static boolean isAnagram(String s, String t) {
+        HashMap<Character, Integer> hm = new HashMap<>();
+        HashMap<Character, Integer> hm2 = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            hm.put(c, hm.getOrDefault(c, 0) + 1);
+        }
+        for (char c : t.toCharArray()) {
+            hm2.put(c, hm2.getOrDefault(c, 0) + 1);
+        }
+        return hm.equals(hm2);
+    }*/
+
+
+/*    public static boolean isAnagram(String s, String t) {
         HashMap<Character, Integer> hm = new HashMap<>();
         int sl = s.length();
         int tl = t.length();
@@ -25,5 +48,5 @@ public class Problem242 {
         }
 
         return true;
-    }
+    }*/
 }
