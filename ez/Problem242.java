@@ -12,12 +12,34 @@ public class Problem242 {
     }
 
     public static boolean isAnagram(String s, String t) {
+        HashMap<Character, Integer> shm = new HashMap<>();
+        HashMap<Character, Integer> thm = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            shm.put(c, shm.getOrDefault(c, 0) + 1);
+        }
+        for (char c : t.toCharArray()) {
+            thm.put(c, thm.getOrDefault(c, 0) + 1);
+        }
+        return shm.equals(thm);
+    }
+
+
+
+
+
+
+
+
+
+  /* public static boolean isAnagram(String s, String t) {
         char[] sc = s.toCharArray();
         char[] tc = t.toCharArray();
         Arrays.sort(sc);
         Arrays.sort(tc);
         return Arrays.equals(sc, tc);
     }
+
+   */
 
  /*   public static boolean isAnagram(String s, String t) {
         HashMap<Character, Integer> hm = new HashMap<>();
