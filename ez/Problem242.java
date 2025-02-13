@@ -12,6 +12,7 @@ public class Problem242 {
     }
 
     public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
         HashMap<Character, Integer> shm = new HashMap<>();
         HashMap<Character, Integer> thm = new HashMap<>();
         for (char c : s.toCharArray()) {

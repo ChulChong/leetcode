@@ -12,6 +12,29 @@ public class Problem1 {
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> hm = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
+            int rest = target - nums[i];
+            //9 - 2  = 7
+            if (hm.containsKey(rest)) {
+                return new int[]{i, hm.get(rest)};
+            } else {
+                hm.put(nums[i], i);
+            }
+        }
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+  /*  public static int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
             int left = target - nums[i];
             if (hm.containsKey(left)) {
                 return new int[]{
@@ -22,5 +45,5 @@ public class Problem1 {
             }
         }
         return new int[0];
-    }
+    }*/
 }
