@@ -7,17 +7,17 @@ public class Problem49 {
     }
 
     public static List<List<String>> groupAnagrams(String[] strs) {
-       HashMap<String, List<String>> hm = new HashMap<>();
-       for(String s : strs){
-           char[] arr = s.toCharArray();
-           Arrays.sort(arr);
-           String sortedString = new String(arr);
-           if(!hm.containsKey(sortedString)){
-               hm.put(sortedString,new ArrayList<>());
-           }
-           hm.get(sortedString).add(s);
-       }
-       return new ArrayList<>(hm.values());
+        HashMap<String, List<String>> hm = new HashMap<>();
+        for (String s : strs) {
+            char[] arr = s.toCharArray();
+            Arrays.sort(arr);
+            String sortedString = new String(arr);
+            if (!hm.containsKey(sortedString)) {
+                hm.put(sortedString, new ArrayList<>());
+            }
+            hm.get(sortedString).add(s);
+        }
+        return new ArrayList<>(hm.values());
 
     }
 }
