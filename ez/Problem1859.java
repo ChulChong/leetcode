@@ -13,10 +13,10 @@ public class Problem1859 {
             char[] c = d.toCharArray();
             ans[c[c.length - 1] - '0' - 1] = d.substring(0, c.length - 1);
         }
-        for(String d : ans){
+        for (String d : ans) {
             sb.append(d).append(" ");
         }
 
-        return sb.substring(0,sb.length()-1);
+        return sb.substring(0, sb.length() - 1);
     }
 }

@@ -9,13 +9,12 @@ public class Problem278 {
         int low = 0;
         int high = n;
 
-        while(low <= high){
+        while (low <= high) {
             int mid = low + (high - low) / 2;
-            if(isBadVersion(mid, 1) && !isBadVersion(mid - 1, 1)) return mid;
-            else if(!isBadVersion(mid, 1)){
+            if (isBadVersion(mid, 1) && !isBadVersion(mid - 1, 1)) return mid;
+            else if (!isBadVersion(mid, 1)) {
                 low = mid + 1;
-            }
-            else high = mid;
+            } else high = mid;
         }
 
         return -1;
